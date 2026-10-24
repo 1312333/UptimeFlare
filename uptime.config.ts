@@ -7,7 +7,7 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "AWAurora233's Status Page",
+  title: "AWAurora233's 状态监控",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.com/1312333', label: 'GitHub' },
@@ -22,9 +22,9 @@ const workerConfig: WorkerConfig = {
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'blog_monitor',
+      id: 'blog_1',
       // `name` is used at status page and callback message
-      name: 'AWAurora233blog Monitor',
+      name: '博客(主站)',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
@@ -54,6 +54,22 @@ const workerConfig: WorkerConfig = {
       // checkProxy: 'worker://weur',
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
+    },
+    {
+      id: 'blog_2',
+      name: '博客(备用)',
+      method: 'GET',
+      target: 'https://www.free-blog-xiaoyuer.ccwu.cc',
+      tooltip: 'This is a tooltip for this monitor',
+      statusPageLink: 'https://www.free-blog-xiaoyuer.ccwu.cc',
+    },
+    {
+      id: 'home_monitor',
+      name: '个人主页',
+      method: 'GET',
+      target: 'https://www.xiaoyuer.us.ci',
+      tooltip: 'This is a tooltip for this monitor',
+      statusPageLink: 'https://www.xiaoyuer.us.ci',
     },
     // Example TCP Monitor
     {
